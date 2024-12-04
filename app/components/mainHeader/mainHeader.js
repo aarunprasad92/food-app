@@ -17,13 +17,10 @@ export default function MainHeader() {
       <nav className={classes.nav}>
         <ul>
             <li>
-                <Link href="/meals">Meals</Link>
+                <Link href="/meals">Browse Meals</Link>
             </li>
             <li>
-                <Link href="/meals/share">Share Meal</Link>
-            </li>
-            <li>
-                <Link href="/community">Community</Link>
+                <Link href="/community">Foodies Community</Link>
             </li>
         </ul>
       </nav>
