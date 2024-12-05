@@ -1,11 +1,28 @@
 import React from 'react';
+import classes from './page.module.css';
+import Link from 'next/link';
+import MealsGrid from '../components/meals/mealsGrid';
 
 const MealsPage = () => {
   return (
-    <div>
-      <h1>Welcome to the Meals Page</h1>
-      <p>This is a Meals Page</p>
-    </div>
+    <>
+    <header className={classes.header}>
+      <h1>
+        Delicious meals, created{' '}
+        <span className={classes.highlight}>by you</span>
+      </h1>
+      <p>
+        Choose your favorite recipe and cook it yourself. It is easy and fun!
+      </p>
+      <p className={classes.cta}>
+        <Link href="/meals/share">
+          Share your Favorite recipe
+        </Link>
+      </p>
+    </header>
+    <main className={classes.main}></main>
+      <MealsGrid meals={[]} />
+    </>
   );
 };
 
