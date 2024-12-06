@@ -1,9 +1,15 @@
 import Image from 'next/image';
 import classes from './page.module.css';
 import { getMealById } from '@/lib/meals';
+import { notFound } from 'next/navigation';
 
 const MealPage = ({params}) => {
   const meal = getMealById(params.slug);
+  
+  if (!meal) {
+    notFound();
+  }
+  
   meal.instructions = meal.instructions.replace(/\n/g, '<br>');
   return <>
     <header className={classes.header}>
